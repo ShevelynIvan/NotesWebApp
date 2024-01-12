@@ -1,0 +1,54 @@
+﻿@model Note
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text">Note List</h2>
+        </div>
+
+        <div class="col-6 text-end">
+            <a asp-controller="Note" asp-action="Create" class="btn btn-primary text-nowrap">
+                <i class="bi bi-plus-square"></i> &nbsp; Create New Note
+            </a>
+        </div>
+    </div>
+    <br />
+
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Priority
+                </th>
+                <th>
+                    Note name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Model.Priority
+                </td>
+                <td width="30%">
+                    @Model.Name
+                </td>
+                <td width="50%">
+                    @Model.Value
+                </td>
+                <td width="15%">
+                    <a asp-controller="Note" asp-action="Edit" asp-route-id="@Model.Id"
+                        class="btn btn-primary mx-2 mb-2 d-block text-nowrap"><i class="bi bi-pencil"></i> &nbsp; Edit</a>
+                    <a asp-controller="Note" asp-action="Delete" asp-route-id="@Model.Id"
+                       class="btn btn-danger mx-2 mb-2 d-block text-nowrap"><i class="bi bi-trash-fill"></i> &nbsp; Delete</a>
+                    <a asp-controller="Note" asp-action="Index"
+                       class="btn btn-secondary mx-2 d-block text-nowrap"> <i class="bi bi-arrow-bar-left"></i> Back</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
