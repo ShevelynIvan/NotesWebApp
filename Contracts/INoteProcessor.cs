@@ -1,6 +1,4 @@
-﻿using Contracts;
-
-namespace NotesProcessor
+﻿namespace Contracts
 {
     public interface INoteProcessor
     {

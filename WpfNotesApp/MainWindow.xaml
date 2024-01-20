@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfNotesApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfNotesApp"
+        mc:Ignorable="d"
+        Title="Notes List" Height="450" Width="800">
+    <StackPanel Margin="0,0,0,2">
+        <DataGrid x:Name="DGN" HorizontalAlignment="Left" ColumnWidth="*" IsReadOnly="True"
+             AutoGenerateColumns="false" Margin="0,5,0,5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Priority" Binding="{Binding Priority}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Value}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Height="32">
+            <Button Content="Create" Margin="10,5,727,-5" Name="CreateNoteBtn" Click="CreateNoteBtn_Click"/>
+            <Button Content="Edit" Margin="78,5,659,-5" Name="EditNoteBtn" Click="EditNoteBtn_Click"/>
+            <Button Content="Delete" Margin="146,5,591,-5" Name="DeleteNoteBtn" Click="DeleteNoteBtn_Click"/>
+        </Grid>
+
+    </StackPanel>
+</Window>

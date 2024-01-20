@@ -26,23 +26,23 @@ namespace NotesDAL.Repos
         public void Create(Note item)
         {
             _db.Notes.Add(item);
+            _db.SaveChanges();
         }
 
         public void Update(Note item)
         {
             _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
         }
 
         public void Delete(Guid id)
         {
             Note note = _db.Notes.Find(id);
             if (note != null)
+            {
                 _db.Notes.Remove(note);
-        }
-
-        public void Save()
-        {
-            _db.SaveChanges();
+                _db.SaveChanges();
+            }
         }
 
         private bool _disposed = false;

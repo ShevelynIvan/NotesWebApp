@@ -1,5 +1,4 @@
-﻿using NotesDAL.Repos;
-using Contracts;
+﻿using Contracts;
 
 namespace NotesProcessor
 {
@@ -25,19 +24,16 @@ namespace NotesProcessor
         public void Create(Note item)
         {
             _repository.Create(item);
-            _repository.Save();
         }
 
         public void Update(Note item)
         {
             _repository.Update(item);
-            _repository.Save();
         }
 
         public void Delete(Guid id)
         {
             _repository.Delete(id);
-            _repository.Save();
         }
 
         public IEnumerable<Note> SortNotesByPriority(IEnumerable<Note> notes)

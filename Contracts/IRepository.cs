@@ -1,4 +1,4 @@
-﻿namespace NotesDAL.Repos
+﻿namespace Contracts
 {
     public interface IRepository<T> : IDisposable where T : class
     {
@@ -7,6 +7,5 @@
         void Create(T item);
         void Update(T item);
         void Delete(Guid id);
-        void Save();
     }
 }

@@ -3,16 +3,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Contracts
 {
-    public class Note
+    public class Note : ValidatorBase
     {
         [Key]
         public Guid Id { get; set; }
 
-        [Required]
-        [MinLength(1), MaxLength(50)]
+        [Required(ErrorMessage = "Name is required.")]
+        [StringLength(50, ErrorMessage = "No more than 50 characters")]
         public string Name { get; set; }
 
-        [MaxLength(1000)]
+        [StringLength(1000, ErrorMessage = "No more than 1000 characters")]
         [DisplayName("Description")]
         public string? Value { get; set; }
 
